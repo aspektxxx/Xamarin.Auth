@@ -16,9 +16,9 @@ using Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices;
 namespace Xamarin.Auth
 {
     /// <summary>
-    /// Custom tabs configuration needed to pass Custom Tabs data for customization to the 
+    /// Custom tabs configuration needed to pass Custom Tabs data for customization to the
     /// Activity that launches CustomTabs
-    /// 
+    ///
     /// Too many complex classes to implement java interfaces
     ///     Serializable
     /// or
@@ -273,7 +273,7 @@ namespace Xamarin.Auth
 
         public static void UICustomization()
         {
-            ActivityFlags = 
+            ActivityFlags =
                     global::Android.Content.ActivityFlags.NoHistory
                     |
                     global::Android.Content.ActivityFlags.SingleTop
@@ -323,7 +323,7 @@ namespace Xamarin.Auth
                 PendingIntent pi = null;
                 //............................................................
                 // Action Button Bitmap
-                // Generally do not decode bitmaps in the UI thread. 
+                // Generally do not decode bitmaps in the UI thread.
                 // Decoding it in the UI thread to keep the example short.
                 ActionButtonIconBitmap = global::Android.Graphics.BitmapFactory.DecodeResource
                                                 (
@@ -336,7 +336,7 @@ namespace Xamarin.Auth
                     .SetActionButton(ActionButtonIconBitmap, ActionLabel, pi)
                     ;
 
-                // TODO: ufff leaks? 
+                // TODO: ufff leaks?
                 // ActionButtonIconBitmap = null;
                 // pi = null;
             }
@@ -349,7 +349,7 @@ namespace Xamarin.Auth
                 PendingIntent pi_menu_item = CreatePendingIntent(CustomTabsActionsBroadcastReceiver.ACTION_MENU_ITEM);
                 CustomTabsIntentBuilder.AddMenuItem(MenuItemTitle, pi_menu_item);
 
-                // TODO: ufff leaks? 
+                // TODO: ufff leaks?
                 // ActionButtonIconBitmap = null;
                 // pi_menu_item = null;
             }
@@ -362,7 +362,7 @@ namespace Xamarin.Auth
             {
                 //............................................................
                 // Action Label Toolbar
-                // Generally do not decode bitmaps in the UI thread. 
+                // Generally do not decode bitmaps in the UI thread.
                 // Decoding it in the UI thread to keep the example short.
                 ActionBarToolbarIconBitmap = global::Android.Graphics.BitmapFactory.DecodeResource
                                                     (
@@ -375,7 +375,7 @@ namespace Xamarin.Auth
                 CustomTabsIntentBuilder.AddToolbarItem(TOOLBAR_ITEM_ID, ActionBarToolbarIconBitmap, ActionLabel, pi);
                 //............................................................
 
-                // TODO: ufff leaks? 
+                // TODO: ufff leaks?
                 // ActionBarToolbarIconBitmap = null;
                 // pi = null;
 
@@ -385,7 +385,7 @@ namespace Xamarin.Auth
             {
                 //............................................................
                 // Custom Back Button Bitmap
-                // Generally do not decode bitmaps in the UI thread. 
+                // Generally do not decode bitmaps in the UI thread.
                 // Decoding it in the UI thread to keep the example short.
                 CustomTabsIntentBuilder
                     .SetCloseButtonIcon
@@ -429,7 +429,7 @@ namespace Xamarin.Auth
                 //------------------------------------------------------------
                 //      Optimisations
                 //      [OPTIONAL] [RECOMENDED]
-                //          *   WarmUp, 
+                //          *   WarmUp,
                 //          *   Prefetching
                 //
                 bool launchable_uri = CustomTabActivityHelper.MayLaunchUrl
@@ -441,7 +441,7 @@ namespace Xamarin.Auth
             }
 
             //------------------------------------------------------------
-            //  CustomTabsIntent property getter will call 
+            //  CustomTabsIntent property getter will call
             //      CustomTabsIntent.Builder.Build() internally
             CustomTabsIntent.Intent.AddFlags(ActivityFlags);
 
@@ -452,12 +452,12 @@ namespace Xamarin.Auth
         {
             Intent actionIntent = new Intent
                                         (
-                                            activity.ApplicationContext, 
+                                            activity.ApplicationContext,
                                             typeof(CustomTabsActionsBroadcastReceiver)
                                         );
             actionIntent.PutExtra
                         (
-                            CustomTabsActionsBroadcastReceiver.KEY_ACTION_SOURCE, 
+                            CustomTabsActionsBroadcastReceiver.KEY_ACTION_SOURCE,
                             actionSourceId
                         );
 
@@ -466,7 +466,7 @@ namespace Xamarin.Auth
                                                        activity.ApplicationContext,
                                                        actionSourceId,
                                                        actionIntent,
-                                                       0
+                                                       PendingIntentFlags.Immutable
                                                     );
             return broadcast;
         }
