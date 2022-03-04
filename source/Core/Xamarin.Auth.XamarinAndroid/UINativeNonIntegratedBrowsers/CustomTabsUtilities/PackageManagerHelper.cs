@@ -35,6 +35,7 @@ namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
                 {"STABLE_PACKAGE", "com.android.chrome"},
                 {"BETA_PACKAGE", "com.chrome.beta"},
                 {"DEV_PACKAGE", "com.chrome.dev"},
+                {"CANARY_PACKAGE", "com.chrome.canary"},
                 {"LOCAL_PACKAGE", "com.google.android.apps.chrome"},
             };
 
@@ -80,7 +81,7 @@ namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
         /// Goes through all apps that handle VIEW intents and have a warmup service. Picks
         /// the one chosen by the user if there is one, otherwise makes a best effort to return a
         /// valid package name.
-        /// 
+        ///
         /// This is <strong>not</strong> threadsafe.
         /// </summary>
         /// <param name="context"> <seealso cref="Context"/> to use for accessing <seealso cref="PackageManager"/>. </param>
@@ -256,7 +257,7 @@ namespace Android.Support.CustomTabs.Chromium.SharedUtilities._MobileServices
                 sb.Append(e.Message);
                 Log.Error
                         (
-                            Xamarin.Auth.CustomTabsConfiguration.CustomTabsHelperAndroidLogTag, 
+                            Xamarin.Auth.CustomTabsConfiguration.CustomTabsHelperAndroidLogTag,
                             sb.ToString()
                         );
             }

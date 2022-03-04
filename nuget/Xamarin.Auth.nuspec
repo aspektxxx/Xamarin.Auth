@@ -24,7 +24,7 @@
         http://semver.org/
         -->
 		<version>
-			1.7.0.0
+			1.7.2.0
         </version>
 		<releaseNotes>
             - FindAccountsForService throws on iOS #370
@@ -282,17 +282,17 @@
             │   └── Xamarin.Auth.pri
         -->
         <file
-            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\Release\Xamarin.Auth.dll"
+            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\x86\Release\Xamarin.Auth.dll"
             target="lib/uap10.0/Xamarin.Auth.dll"
             >
         </file>
         <file
-            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\Release\Xamarin.Auth.pdb"
+            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\x86\Release\Xamarin.Auth.pdb"
             target="lib/uap10.0/Xamarin.Auth.pdb"
             >
         </file>
         <file
-            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\Release\Xamarin.Auth.pri"
+            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\x86\Release\Xamarin.Auth.pri"
             target="lib/uap10.0/Xamarin.Auth.pri"
             >
         </file>
@@ -305,12 +305,12 @@
         </file>
         -->		
         <file
-            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\Release\WebAuthenticatorPage.xbf"
+            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\x86\Release\WebAuthenticatorPage.xbf"
             target="lib/uap10.0/Xamarin.Auth/WebAuthenticatorPage.xbf"
             >
         </file>
         <file
-            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\Release\Xamarin.Auth.xr.xml"
+            src="..\source\Core\Xamarin.Auth.UniversalWindowsPlatform\bin\x86\Release\Xamarin.Auth.xr.xml"
             target="lib/uap10.0/Xamarin.Auth/Xamarin.Auth.xr.xml"
             >
         </file>
